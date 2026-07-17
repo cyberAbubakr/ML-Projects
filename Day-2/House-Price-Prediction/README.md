@@ -1,14 +1,20 @@
 # 📂 Dataset
 
-This project uses the **House Prices: Advanced Regression Techniques (Ames Housing Dataset)** available on Kaggle.
+This project uses the **House Prices: Advanced Regression Techniques (Ames Housing Dataset)** provided by Kaggle.
 
-**Kaggle Competition:**
+### 🏆 Kaggle Competition
+
 https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
 
-**Download Dataset:**
+### 📥 Download Dataset
+
 https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
 
-Files used:
+### 📖 Dataset Description
+
+https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
+
+The dataset contains the following files:
 
 ```text
 house-prices-advanced-regression-techniques/
@@ -19,7 +25,7 @@ house-prices-advanced-regression-techniques/
 └── sample_submission.csv
 ```
 
-Place the downloaded dataset inside the project directory:
+After downloading, place the dataset inside the project directory:
 
 ```text
 House-Price-Prediction/
@@ -31,7 +37,7 @@ House-Price-Prediction/
 │   └── sample_submission.csv
 ```
 
-### Target Variable
+### 🎯 Target Variable
 
 ```text
 SalePrice
@@ -43,4 +49,4 @@ The target variable was log-transformed using:
 SalePrice = np.log1p(SalePrice)
 ```
 
-to reduce skewness and improve model performance.
+to reduce skewness and improve regression model performance.
