@@ -1,0 +1,6 @@
+Feature,Data Type,Missing Values,Unique Values
+AgeGroup,category,0,4
+CapitalNet,int64,0,210
+WorkHoursCategory,category,0,4
+EducationLevel,str,0,5
+IncomePerHour,float64,0,769

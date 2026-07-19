@@ -1,0 +1,2 @@
+Model,Accuracy,ROC-AUC,Training Samples,Testing Samples,Features Used
+Logistic Regression Pipeline,0.8598647818070068,0.9151943216557876,26029,6508,19

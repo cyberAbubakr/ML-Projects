@@ -1,0 +1,27 @@
+# Data Manipulation
+pandas
+numpy
+
+# Data Visualization
+matplotlib
+seaborn
+
+# Statistics
+scipy
+
+# Machine Learning
+scikit-learn
+
+# Notebook Environment
+jupyter
+ipykernel
+
+# Model Saving
+joblib
+
+# Progress Bars
+tqdm
+
+# Code Quality
+black
+flake8
