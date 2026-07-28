@@ -2,12 +2,17 @@
 
 ## Data Understanding Report
 
-**Project:** Customer Personality Analysis Dataset  
-**Dataset Source:** Kaggle Marketing Campaign Dataset  
-**Prepared By:** Abubakr Kazmi  
-**Tools Used:** Python, Pandas, Jupyter Notebook  
-**Report Type:** Initial Data Exploration and Data Quality Analysis  
-**Date:** July 2026  
+**Project:** Customer Personality Analysis Dataset
+
+**Dataset Source:** Kaggle Marketing Campaign Dataset
+
+**Prepared By:** Abubakr Kazmi
+
+**Tools Used:** Python, Pandas, Jupyter Notebook
+
+**Report Type:** Initial Data Exploration and Data Quality Analysis
+
+**Date:** July 2026
 
 ---
 
@@ -29,29 +34,39 @@ Dataset file:
 
 ```
 marketing_campaign.csv
+
 ```
 
 The dataset contains information about individual customers, including:
 
-- Personal demographics
-- Household information
-- Product spending
-- Purchase channels
-- Campaign responses
-- Customer complaints
+* Personal demographics
+* Household information
+* Product spending
+* Purchase channels
+* Campaign responses
+* Customer complaints
+
+📷 Screenshot – Raw Dataset Folder
+*(Place screenshot here)*
 
 ---
 
 # Basic Dataset Inspection
 
 | Description | Value |
-|-------------|-------|
+| --- | --- |
 | Total Records | 2,240 |
 | Total Columns | 29 |
 | File Format | CSV (Tab Delimited) |
 | File Size | 0.21 MB |
 
 The dataset contains 2,240 customer records with 29 different attributes.
+
+📷 Screenshot – Dataset Loaded (head())
+*(Place screenshot here)*
+
+📷 Screenshot – Dataset Shape
+*(Place screenshot here)*
 
 ---
 
@@ -81,7 +96,11 @@ Day-6/
 │   └── data_understanding.ipynb
 │
 └── README.md
+
 ```
+
+📷 Screenshot – Project Folder Structure
+*(Place screenshot here)*
 
 ---
 
@@ -89,36 +108,42 @@ Day-6/
 
 After checking the dataset, the variables were divided into numerical and categorical types.
 
+📷 Screenshot – Column Data Types
+*(Place screenshot here)*
+
 ## Numerical Variables
 
 The dataset contains 25 numerical variables:
 
-- ID
-- Year_Birth
-- Income
-- Kidhome
-- Teenhome
-- Recency
-- MntWines
-- MntFruits
-- MntMeatProducts
-- MntFishProducts
-- MntSweetProducts
-- MntGoldProds
-- NumDealsPurchases
-- NumWebPurchases
-- NumCatalogPurchases
-- NumStorePurchases
-- NumWebVisitsMonth
-- AcceptedCmp1
-- AcceptedCmp2
-- AcceptedCmp3
-- AcceptedCmp4
-- AcceptedCmp5
-- Complain
-- Z_CostContact
-- Z_Revenue
-- Response
+* ID
+* Year_Birth
+* Income
+* Kidhome
+* Teenhome
+* Recency
+* MntWines
+* MntFruits
+* MntMeatProducts
+* MntFishProducts
+* MntSweetProducts
+* MntGoldProds
+* NumDealsPurchases
+* NumWebPurchases
+* NumCatalogPurchases
+* NumStorePurchases
+* NumWebVisitsMonth
+* AcceptedCmp1
+* AcceptedCmp2
+* AcceptedCmp3
+* AcceptedCmp4
+* AcceptedCmp5
+* Complain
+* Z_CostContact
+* Z_Revenue
+* Response
+
+📷 Screenshot – Summary Statistics
+*(Place screenshot here)*
 
 ---
 
@@ -126,9 +151,9 @@ The dataset contains 25 numerical variables:
 
 The dataset contains three categorical/text variables:
 
-- Education
-- Marital_Status
-- Dt_Customer
+* Education
+* Marital_Status
+* Dt_Customer
 
 ---
 
@@ -139,10 +164,13 @@ Missing value checking was performed on all columns.
 The only missing values were found in the Income column.
 
 | Column | Missing Values | Percentage |
-|--------|---------------|------------|
+| --- | --- | --- |
 | Income | 24 | 1.07% |
 
 The number of missing values is small compared to the total dataset size. However, Income is an important feature because it represents customer purchasing ability, so it needs proper handling during preprocessing.
+
+📷 Screenshot – Missing Values Report
+*(Place screenshot here)*
 
 ---
 
@@ -150,17 +178,20 @@ The number of missing values is small compared to the total dataset size. Howeve
 
 Duplicate records were checked using:
 
-- Complete row comparison
-- Customer ID comparison
+* Complete row comparison
+* Customer ID comparison
 
 Results:
 
 | Check | Result |
-|------|--------|
+| --- | --- |
 | Duplicate Rows | 0 |
 | Duplicate IDs | 0 |
 
 No duplicate customer records were found in the dataset.
+
+📷 Screenshot – Duplicate Check
+*(Place screenshot here)*
 
 ---
 
@@ -175,10 +206,14 @@ Three records contain unusual birth years:
 ```
 1893
 1899
-1899
+1900
+
 ```
 
-These values indicate unrealistic customer ages and should be investigated before further analysis.
+These values indicate unrealistic customer ages (over 114 years old) and should be addressed during preprocessing.
+
+📷 Screenshot – Incorrect Values / Unrealistic Ages
+*(Place screenshot here)*
 
 ---
 
@@ -188,9 +223,13 @@ One customer record has:
 
 ```
 Income = 666,666
+
 ```
 
-This value is significantly higher compared to other customers and may represent a data entry error.
+This value is significantly higher compared to other customers and represents an extreme outlier or data entry error.
+
+📷 Screenshot – Income Outlier Detection
+*(Place screenshot here)*
 
 ---
 
@@ -199,12 +238,15 @@ This value is significantly higher compared to other customers and may represent
 Some unusual values were found in the Marital_Status column:
 
 | Category | Count |
-|----------|------:|
+| --- | --- |
 | Absurd | 2 |
 | YOLO | 2 |
 | Alone | 3 |
 
-These categories should be reviewed and standardized.
+These categories should be reviewed and standardized into standard relationship categories like `Single`.
+
+📷 Screenshot – Category Standardization
+*(Place screenshot here)*
 
 ---
 
@@ -237,7 +279,7 @@ Monthly website visits can show customer engagement with digital platforms.
 # Data Quality Summary
 
 | Issue | Column | Description | Action Required |
-|------|--------|-------------|----------------|
+| --- | --- | --- | --- |
 | Missing Values | Income | 24 missing records | Handle during preprocessing |
 | Invalid Values | Year_Birth | 3 unrealistic birth years | Review and correct |
 | Outlier | Income | Extreme income value | Investigate |
@@ -249,7 +291,7 @@ Monthly website visits can show customer engagement with digital platforms.
 # Data Dictionary
 
 | Feature | Type | Description | Business Meaning |
-|---------|------|-------------|------------------|
+| --- | --- | --- | --- |
 | ID | Integer | Customer identifier | Unique customer reference |
 | Year_Birth | Integer | Customer birth year | Customer age information |
 | Education | Text | Education level | Customer background |
@@ -284,15 +326,15 @@ Location:
 
 ```
 02_Inspection_Report/
+
 ```
 
 Contains:
 
-- Basic dataset inspection
-- Variable inspection
-- Numerical variable summary
-- Categorical variable summary
-
+* Basic dataset inspection
+* Variable inspection
+* Numerical variable summary
+* Categorical variable summary
 
 ## Data Quality Reports
 
@@ -300,14 +342,21 @@ Location:
 
 ```
 03_Data_Quality/
+
 ```
 
 Contains:
 
-- Missing values report
-- Duplicate report
-- Incorrect values report
-- Complete data quality report
+* Missing values report
+* Duplicate report
+* Incorrect values report
+* Complete data quality report
+
+📷 Screenshot – Generated Excel Reports
+*(Place screenshot here)*
+
+📷 Screenshot – GitHub Repository
+*(Place screenshot here)*
 
 ---
 
@@ -317,19 +366,21 @@ The Customer Personality Analysis dataset is well structured and contains useful
 
 The initial inspection showed that the dataset has:
 
-- No duplicate records
-- Very low missing values
-- Good overall structure
-- A few outliers and inconsistent values
+* No duplicate records
+* Very low missing values
+* Good overall structure
+* A few outliers and inconsistent values
 
 The identified issues will need to be handled during the preprocessing stage before performing exploratory analysis or building machine learning models.
 
 ---
 
-**Prepared By:**  
-Abubakr Kazmi  
+**Prepared By:**
 
-**Project Phase:**  
-Data Understanding and Quality Assessment  
+Abubakr Kazmi
+
+**Project Phase:**
+
+Data Understanding and Quality Assessment
 
 **Date:** July 2026
