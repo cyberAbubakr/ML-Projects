@@ -32,18 +32,7 @@ def load_cleaned_data(path=CLEANED_DATA_PATH):
 
 
 def save_fig(fig, name, show=True):
-    """
-    Save a matplotlib figure and display it by default.
-
-    Parameters
-    ----------
-    fig : matplotlib.figure.Figure
-        Figure to save.
-    name : str
-        Output filename (without extension).
-    show : bool, default=True
-        Display the figure in the notebook after saving.
-    """
+    """Save a matplotlib figure and optionally display it."""
     CHART_DIR.mkdir(parents=True, exist_ok=True)
 
     fig.savefig(
@@ -56,7 +45,6 @@ def save_fig(fig, name, show=True):
         plt.show()
 
     plt.close(fig)
-
 
 def save_excel(df, name):
     """Save a DataFrame to 05_EDA_Report as an Excel file."""
